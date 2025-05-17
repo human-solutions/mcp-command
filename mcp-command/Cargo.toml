@@ -1,0 +1,8 @@
+[package]
+name = "mcp-command"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cmd-lib = { path = "../cmd-lib" }
+mcp-lib = { path = "../mcp-lib" }
