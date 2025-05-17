@@ -1,5 +1,5 @@
 use cmd_lib::run;
-use mcp_lib::Mcp;
+use mcp_lib::{Mcp, start_hello_server};
 
 fn main() {
     let output = match run("echo", &["Hello from mcp-command"]) {
@@ -12,4 +12,8 @@ fn main() {
 
     let formatted = Mcp::process_output(&output.stdout);
     println!("{formatted}");
+
+    if let Err(err) = start_hello_server() {
+        eprintln!("server error: {err}");
+    }
 }
