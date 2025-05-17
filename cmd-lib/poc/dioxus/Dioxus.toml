@@ -1,0 +1,6 @@
+[application]
+name = "poc_dioxus"
+out_dir = "dist"
+
+[web.app]
+index_on_build = true
