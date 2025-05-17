@@ -49,7 +49,11 @@ Tools may take time to initialize. Each tool configuration allows waiting for an
 
 Example wait configuration:
 ```toml
-[dioxus.wait]
+[dioxus.rebuild]
+description = "Trigger a rebuild for the dx tool"
+keystroke = "r"
+
+[dioxus.rebuild.wait]
 for = "Status: Serving"
 not = ["Status: Error", "Status: Aborted"]
 timeout_secs = 60
@@ -68,10 +72,4 @@ The server reads the configuration and performs the defined operations to contro
 - Launch a database and wait for the ready message before running integration tests.
 - Start a web server, watch for compile states, and send a rebuild command when requested.
 - Manage long-running utilities that require periodic keystrokes or signals.
-
-## Future Work
-
-- Support additional configuration sources or remote configurations.
-- Provide a library for custom tooling to embed MCP Command functionality.
-- Improve TUI detection and output streaming for a variety of tools.
 
