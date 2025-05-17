@@ -1,9 +1,9 @@
 use dioxus::prelude::*;
 
 fn main() {
-    dioxus_web::launch(app);
+    dioxus::launch(app);
 }
 
-fn app(cx: Scope) -> Element {
-    cx.render(rsx!( div { "Hello from Dioxus" } ))
+fn app() -> Element {
+    rsx!( div { "Hello from Dioxus" } )
 }
